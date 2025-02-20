@@ -5,7 +5,11 @@ function App() {
 
   return (
     <div>
-      <ListGroup items={items} heading="Cities"></ListGroup>
+      <ListGroup
+        items={items}
+        heading="Cities"
+        onSelectItem={(item) => console.log(item)}
+      ></ListGroup>
     </div>
   );
 }

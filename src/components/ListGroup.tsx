@@ -3,9 +3,10 @@ import { useState } from "react";
 interface ListGroupProps {
   items: string[];
   heading: string;
+  onSelectItem: (item: string) => void;
 }
 
-function ListGroup({ items, heading }: ListGroupProps) {
+function ListGroup({ items, heading, onSelectItem }: ListGroupProps) {
   //   const items: any[] = [];
   const list_condition = items.length === 0 && <p>No item found</p>;
   //   const handleClick = (event:MouseEvent) => console.log(event);
@@ -26,7 +27,7 @@ function ListGroup({ items, heading }: ListGroupProps) {
             key={index}
             onClick={() => {
               setSelectedIndex(index);
-              console.log(index + " : " + item);
+              onSelectItem(item);
             }}
           >
             {item}
